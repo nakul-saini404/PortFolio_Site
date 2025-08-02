@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import ProjectList from "../portFolioLIst/ProjectList";
-import { Snackbar, Alert } from "@mui/material";
+import { Snackbar, Alert, Card, CardContent } from "@mui/material";
 
 export default function Portfolio() {
   const [darkMode, setDarkMode] = useState(false);
@@ -153,43 +153,43 @@ export default function Portfolio() {
             <Typography variant="h4" gutterBottom align="left">
               Contact Me
             </Typography>
-            <Box
-              component="form"
-              onSubmit={handleSubmit}
-              sx={{ display: "flex", flexDirection: "column", gap: 2 }}
-            >
-              <TextField
-                fullWidth
-                name="name"
-                label="Name"
-                variant="outlined"
-                required
-                InputLabelProps={{ shrink: true }}
-              />
-              <TextField
-                fullWidth
-                name="email"
-                label="Email"
-                type="email"
-                variant="outlined"
-                required
-                InputLabelProps={{ shrink: true }}
-              />
-              <TextField
-                fullWidth
-                name="message"
-                label="Message"
-                multiline
-                rows={4}
-                variant="outlined"
-                required
-                InputLabelProps={{ shrink: true }}
-
-              />
-              <Button variant="contained" type="submit">
-                Send Message
-              </Button>
-            </Box>
+            <Card elevation={4} sx={{  mx: "auto", mt: 4 }}>
+              <CardContent>
+                <Box
+                  component="form"
+                  onSubmit={handleSubmit}
+                  sx={{ display: "flex", flexDirection: "column", gap: 2 }}
+                >
+                  <TextField
+                    fullWidth
+                    name="name"
+                    label="Name"
+                    variant="outlined"
+                    required
+                  />
+                  <TextField
+                    fullWidth
+                    name="email"
+                    label="Email"
+                    type="email"
+                    variant="outlined"
+                    required
+                  />
+                  <TextField
+                    fullWidth
+                    name="message"
+                    label="Message"
+                    multiline
+                    rows={4}
+                    variant="outlined"
+                    required
+                  />
+                  <Button variant="contained" type="submit">
+                    Send Message
+                  </Button>
+                </Box>
+              </CardContent>
+            </Card>
 
             <Snackbar
               open={open}

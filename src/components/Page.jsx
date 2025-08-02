@@ -120,41 +120,39 @@ export default function Portfolio() {
             <Typography variant="h4" gutterBottom align="left">
               Contact Me
             </Typography>
-            <Box component="form" noValidate autoComplete="off">
-              <Grid container spacing={2}>
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    fullWidth
-                    label="Name"
-                    variant="outlined"
-                    required
-                  />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    fullWidth
-                    label="Email"
-                    type="email"
-                    variant="outlined"
-                    required
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField
-                    fullWidth
-                    label="Message"
-                    multiline
-                    rows={4}
-                    variant="outlined"
-                    required
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <Button variant="contained" type="submit">
-                    Send Message
-                  </Button>
-                </Grid>
-              </Grid>
+            <Box
+              component="form"
+              action="https://formspree.io/f/xqaldpvz" // replace with your actual Formspree URL
+              method="POST"
+              sx={{ display: "flex", flexDirection: "column", gap: 2 }}
+            >
+              <TextField
+                fullWidth
+                name="name"
+                label="Name"
+                variant="outlined"
+                required
+              />
+              <TextField
+                fullWidth
+                name="email"
+                label="Email"
+                type="email"
+                variant="outlined"
+                required
+              />
+              <TextField
+                fullWidth
+                name="message"
+                label="Message"
+                multiline
+                rows={4}
+                variant="outlined"
+                required
+              />
+              <Button variant="contained" type="submit">
+                Send Message
+              </Button>
             </Box>
           </Box>
         </Box>

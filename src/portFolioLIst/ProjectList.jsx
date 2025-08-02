@@ -1,6 +1,8 @@
 // ProjectList.js
 import React from "react";
 import { Grid, Card, CardContent, Typography, Link } from "@mui/material";
+import { useForm, ValidationError } from '@formspree/react';
+
 
 const projects = [
   {
@@ -21,6 +23,11 @@ const projects = [
 ];
 
 export default function ProjectList() {
+
+  const [state, handleSubmit] = useForm("xqaldpvz");
+  if (state.succeeded) {
+      return <p>Thanks for joining!</p>;
+  }
   return (
     <Grid container spacing={1} sx={{ mt: 2 }}>
       {projects.map((project, index) => (

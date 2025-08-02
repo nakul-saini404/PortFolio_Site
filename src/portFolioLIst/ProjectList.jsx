@@ -1,7 +1,6 @@
 // ProjectList.js
 import React from "react";
 import { Grid, Card, CardContent, Typography, Link } from "@mui/material";
-import { useForm, ValidationError } from '@formspree/react';
 
 
 const projects = [
@@ -20,14 +19,16 @@ const projects = [
     description: "A theme switcher project for learn how to implement theme switcher.",
     link: "https://github.com/nakul-saini404/themeSwitcher",
   },
+  {
+    title: "ToDo",
+    description: "A todo project that add todos list, edit it and delete it",
+    link: "https://github.com/nakul-saini404/10TodoContext",
+  },
 ];
 
 export default function ProjectList() {
 
-  const [state, handleSubmit] = useForm("xqaldpvz");
-  if (state.succeeded) {
-      return <p>Thanks for joining!</p>;
-  }
+
   return (
     <Grid container spacing={1} sx={{ mt: 2 }}>
       {projects.map((project, index) => (
@@ -41,7 +42,7 @@ export default function ProjectList() {
                 {project.description}
               </Typography>
               <Link href={project.link} target="_blank" rel="noopener" underline="hover">
-                View Project
+                View Project Code On My GitHub
               </Link>
             </CardContent>
           </Card>

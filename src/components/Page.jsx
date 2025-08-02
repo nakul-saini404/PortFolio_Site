@@ -13,9 +13,12 @@ import {
 } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import ProjectList from "../portFolioLIst/ProjectList";
+import { Snackbar, Alert } from "@mui/material";
 
 export default function Portfolio() {
   const [darkMode, setDarkMode] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [success, setSuccess] = useState(true);
 
   const theme = createTheme({
     palette: {
@@ -38,6 +41,36 @@ export default function Portfolio() {
       },
     },
   });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+
+    try {
+      const response = await fetch("https://formspree.io/f/xqaldpvz", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setSuccess(true);
+        e.target.reset();
+      } else {
+        setSuccess(false);
+      }
+    } catch (error) {
+      setSuccess(false);
+    } finally {
+      setOpen(true);
+    }
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -122,8 +155,7 @@ export default function Portfolio() {
             </Typography>
             <Box
               component="form"
-              action="https://formspree.io/f/xqaldpvz" // replace with your actual Formspree URL
-              method="POST"
+              onSubmit={handleSubmit}
               sx={{ display: "flex", flexDirection: "column", gap: 2 }}
             >
               <TextField
@@ -132,6 +164,7 @@ export default function Portfolio() {
                 label="Name"
                 variant="outlined"
                 required
+                InputLabelProps={{ shrink: true }}
               />
               <TextField
                 fullWidth
@@ -140,6 +173,7 @@ export default function Portfolio() {
                 type="email"
                 variant="outlined"
                 required
+                InputLabelProps={{ shrink: true }}
               />
               <TextField
                 fullWidth
@@ -149,11 +183,30 @@ export default function Portfolio() {
                 rows={4}
                 variant="outlined"
                 required
+                InputLabelProps={{ shrink: true }}
+
               />
               <Button variant="contained" type="submit">
                 Send Message
               </Button>
             </Box>
+
+            <Snackbar
+              open={open}
+              autoHideDuration={4000}
+              onClose={handleClose}
+              anchorOrigin={{ vertical: "top", horizontal: "right" }}
+            >
+              <Alert
+                onClose={handleClose}
+                severity={success ? "success" : "error"}
+                sx={{ width: "100%" }}
+              >
+                {success
+                  ? "Message sent successfully!"
+                  : "Failed to send message."}
+              </Alert>
+            </Snackbar>
           </Box>
         </Box>
       </Container>

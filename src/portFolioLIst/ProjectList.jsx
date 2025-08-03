@@ -13,7 +13,7 @@ const projects = [
   {
     title: "E-commerce App",
     description: "A responsive e-commerce frontend built using React and Bootstrap.",
-    link: "https://github.com/yourusername/ecommerce-app",
+    link: "https://github.com/nakul-saini404/E-commerce-app",
   },
   {
     title: "Theme Switcher",

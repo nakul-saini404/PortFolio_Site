@@ -32,7 +32,7 @@
 
 //   return (
 //     <div>
-//       <Grid container spacing={3}>
+//       <Grid container spacing={3}>g
 //       {projects.map((project, index) => (
 //         <Grid item xs={12} sm={6} md={3} key={index}>
 //           <Card elevation={3} sx={{ height: "100%", p: 1 }}>

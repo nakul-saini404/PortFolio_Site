@@ -19,6 +19,7 @@ const projects = [
     desc: "A personal website built with React and Material UI, showcasing projects and a contact form.",
     icon: <WebIcon />,
     link: "https://github.com/nakul-saini404/PortFolio_SIte",
+    link2:"https://nakul-saini404.github.io/PortFolio_Site/",
   },
   {
     title: "E-commerce App",
@@ -66,7 +67,7 @@ const Projects = () => {
                 boxShadow: isDark
                   ? "0 4px 20px rgba(0, 0, 0, 0.4)"
                   : "0 4px 20px rgba(0, 0, 0, 0.1)",
-                padding: 3,
+                pt: 2,
                 transition: "transform 0.3s ease, box-shadow 0.3s ease",
                 "&:hover": {
                   transform: "translateY(-6px)",
@@ -100,7 +101,7 @@ const Projects = () => {
 
                 <Typography
                   variant="h6"
-                  sx={{ textAlign: "center" }}
+                  sx={{ textAlign: "center", px: 3 }}
                   gutterBottom
                 >
                   {p.title}
@@ -112,11 +113,13 @@ const Projects = () => {
                     mb: 2,
                     textAlign: "center",
                     maxWidth: "80%",
+                    
                   }}
                 >
                   {p.desc}
                 </Typography>
-                <Link
+                <Box display={"flex"} alignItems="center"  justifyContent="soace-between" >
+                     <Link
                   href={p.link}
                   sx={{
                     textAlign: "center",
@@ -124,13 +127,32 @@ const Projects = () => {
                     width: "100%",
                     display: "inline-block",
                     color: theme.palette.primary.main,
+                    mt:2
                   }}
                   underline="hover"
                   target="_blank"
                   rel="noopener"
                 >
-                  View Project Code On My GitHub
+                  View Code On My GitHub
                 </Link>
+                <Link
+                  href={p.link2}
+                  sx={{
+                    textAlign: "center",
+                    margin: "auto",
+                    width: "100%",
+                    display: "inline-block",
+                    color: theme.palette.primary.main,
+                    mt:2
+                  }}
+                  underline="hover"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  View Project Live
+                </Link>
+                </Box>
+               
               </CardContent>
             </Card>
           </Grid>

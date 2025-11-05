@@ -1,15 +1,23 @@
-import { Box, Typography, TextField, Button, Paper, Snackbar, Alert ,Grid} from "@mui/material";
+import {
+  Box,
+  Typography,
+  TextField,
+  Button,
+  Paper,
+  Snackbar,
+  Alert,
+  Grid,
+} from "@mui/material";
 import React, { useState } from "react";
 import { useTheme } from "@mui/material/styles";
 import SendIcon from "@mui/icons-material/Send";
-
+import bgImage from "../assets/contactus.jpg";
 
 export default function ContactForm() {
   const [open, setOpen] = useState(false);
   const [success, setSuccess] = useState(true);
   const theme = useTheme(); // ✅ Get current theme (dark/light)
   const isDark = theme.palette.mode === "dark";
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -40,196 +48,303 @@ export default function ContactForm() {
   const handleClose = () => setOpen(false);
 
   return (
-    <Box mt={4}
+    <>
+    <Typography
+        variant="h3"
+        gutterBottom
+        fontWeight="bold"
+        textAlign={"center"}
+        mt={5}
+      >
+        𝒞𝑜𝓃𝓉𝒶𝒸𝓉 𝑀𝑒
+      </Typography>
+      <Box
+      mt={4}
       sx={{
         height: "100%",
-        width:"90%",
-        margin:"auto",
-
-        // p: 3,
-        
-        // boxShadow: "0 4px 20px rgba(0, 0, 0, 0.4)",
-        // transition: "transform 0.3s ease, box-shadow 0.3s ease",
-        // background:
-        //   theme.palette.mode === "dark"
-        //     ? "linear-gradient(145deg, #1b1e24, #20242c)"
-        //     : "linear-gradient(145deg, #ffffff, #f4f4f4)",
-        // color: theme.palette.text.primary,
-        // "&:hover": {
-        //   transform: "translateY(-6px)",
-        //   boxShadow: "0 8px 25px rgba(0, 0, 0, 0.6)",
-        // },
+        width: "90%",
+        margin: "auto",
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center", 
+        backgroundRepeat: "no-repeat", 
+        borderRadius: "16px", 
       }}
     >
-      <Typography variant="h3" gutterBottom fontWeight="bold" textAlign={"center"}>
-        Contact Me
-      </Typography>
-
-      <Paper
-        sx={{
-          p: 3,
-          borderRadius: "16px",
-        //   background:
-        //     theme.palette.mode === "dark"
-        //       ? "linear-gradient(145deg, #1c1f26, #20242c)"
-        //       : "linear-gradient(145deg, #ffffff, #f9f9f9)",
-        //   color: theme.palette.text.primary,
-           background:
-           theme.palette.mode === "dark"
-             ? "linear-gradient(145deg, #1b1e24, #20242c)"
-             : "linear-gradient(145deg, #ffffff, #f4f4f4)",
-         color: theme.palette.text.primary,
-         "&:hover": {
-           transform: "translateY(-6px)",
-           boxShadow: "0 8px 25px rgba(0, 0, 0, 0.6)",
-         },
-        }}
-        elevation={2}
-      >
-        <Grid container spacing={3} onSubmit={handleSubmit} >
-          <Grid size={{ xs: 12,sm:12, md: 6 }} >
-            <Typography variant="h5" fontWeight="600" mb={2}>
+      
+ 
+      <Grid container spacing={3} onSubmit={handleSubmit}>
+        <Grid size={{ xs: 12, sm: 12, md: 6 }} >
+          <Paper
+            sx={{
+              p: 1,
+              mb: 2,
+              mt: 2,
+              ml:6,
+              display:"inline-block",
+              borderRadius: "16px",
+              background:
+                theme.palette.mode === "dark"
+                  ? "linear-gradient(145deg, #1b1e24, #20242c)"
+                  : "linear-gradient(145deg, #ffffff, #f4f4f4)",
+              color: theme.palette.text.primary,
+              "&:hover": {
+                transform: "translateY(-6px)",
+                boxShadow: "0 8px 25px rgba(0, 0, 0, 0.6)",
+              },
+            }}
+            elevation={3}
+          >
+            <Typography variant="h5" fontWeight="600">
               Let's connect 🤝
             </Typography>
-            <Typography variant="body1" color="text.secondary" mb={3}>
-              Feel free to reach out for any query, freelance work, or just
-              to say hi. I’ll get back to you as soon as possible!
+          </Paper>
+          <Paper
+            sx={{
+              p: 1,
+              mb: 2,
+              ml:6,
+              display:"inline-block",
+              borderRadius: "16px",
+              background:
+                theme.palette.mode === "dark"
+                  ? "linear-gradient(145deg, #1b1e24, #20242c)"
+                  : "linear-gradient(145deg, #ffffff, #f4f4f4)",
+              color: theme.palette.text.primary,
+              "&:hover": {
+                transform: "translateY(-6px)",
+                boxShadow: "0 8px 25px rgba(0, 0, 0, 0.6)",
+              },
+            }}
+            elevation={3}
+          >
+            <Typography variant="body1" color="text.secondary">
+              Feel free to reach out for any query, freelance work, or just to
+              say hi. I’ll get back to you as soon as possible!
             </Typography>
-
-            <Typography variant="body2" color="text.secondary"mb={3}>
-              📍 Location: India  
-             
+          </Paper>
+          <Paper
+            sx={{
+              p: 1,
+              mb: 2,
+              ml:6,
+              borderRadius: "16px",
+              display:"inline-block",
+              background:
+                theme.palette.mode === "dark"
+                  ? "linear-gradient(145deg, #1b1e24, #20242c)"
+                  : "linear-gradient(145deg, #ffffff, #f4f4f4)",
+              color: theme.palette.text.primary,
+              "&:hover": {
+                transform: "translateY(-6px)",
+                boxShadow: "0 8px 25px rgba(0, 0, 0, 0.6)",
+              },
+            }}
+            elevation={3}
+          >
+            <Typography variant="body1" color="text.secondary">
+              📍 Location: India
             </Typography>
-            <Typography variant="body2" color="text.secondary"mb={3}>
-              
-              📧 Email: nakul.saini404@gmail.com 
-              
+          </Paper>
+           <Paper
+            sx={{
+              p: 1,
+              mb: 2,
+              ml:6,
+              borderRadius: "16px",
+              display:"inline-block",
+              background:
+                theme.palette.mode === "dark"
+                  ? "linear-gradient(145deg, #1b1e24, #20242c)"
+                  : "linear-gradient(145deg, #ffffff, #f4f4f4)",
+              color: theme.palette.text.primary,
+              "&:hover": {
+                transform: "translateY(-6px)",
+                boxShadow: "0 8px 25px rgba(0, 0, 0, 0.6)",
+              },
+            }}
+            elevation={3}
+          >
+            <Typography variant="body1" color="text.secondary">
+               📧 Email: nakul.saini404@gmail.com
             </Typography>
-            <Typography variant="body2" color="text.secondary"mb={3}>
-              
+          </Paper>
+           <Paper
+            sx={{
+              p: 1,
+              mb: 2,
+              ml:6,
+              borderRadius: "16px",
+              display:"inline-block",
+              background:
+                theme.palette.mode === "dark"
+                  ? "linear-gradient(145deg, #1b1e24, #20242c)"
+                  : "linear-gradient(145deg, #ffffff, #f4f4f4)",
+              color: theme.palette.text.primary,
+              "&:hover": {
+                transform: "translateY(-6px)",
+                boxShadow: "0 8px 25px rgba(0, 0, 0, 0.6)",
+              },
+            }}
+            elevation={3}
+          >
+            <Typography variant="body1" color="text.secondary">
               💼 LinkedIn: www.linkedin.com/in/nakul-saini404
             </Typography>
-          </Grid>
-
-          {/* Contact Form */}
-          <Grid size={{ xs: 12,sm:12, md: 6 }} >
-            <Box
-              component="form"
+          </Paper>
+         
+          <Box
+            component="form"
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: 2,
+            }}
+          >
+            <Paper
+            sx={{
+              p: 1,
+              ml:6,
+              borderRadius: "16px",
+              display:"inline-block",
+              background:
+                theme.palette.mode === "dark"
+                  ? "linear-gradient(145deg, #1b1e24, #20242c)"
+                  : "linear-gradient(145deg, #ffffff, #f4f4f4)",
+              color: theme.palette.text.primary,
+              "&:hover": {
+                transform: "translateY(-6px)",
+                boxShadow: "0 8px 25px rgba(0, 0, 0, 0.6)",
+              },
+            }}
+            elevation={3}
+          >
+            <TextField label="Name" variant="outlined" fullWidth required />
+          </Paper>
+            
+             <Paper
+            sx={{
+              p: 1,
+              ml:6,
+              borderRadius: "16px",
+              display:"inline-block",
+              background:
+                theme.palette.mode === "dark"
+                  ? "linear-gradient(145deg, #1b1e24, #20242c)"
+                  : "linear-gradient(145deg, #ffffff, #f4f4f4)",
+              color: theme.palette.text.primary,
+              "&:hover": {
+                transform: "translateY(-6px)",
+                boxShadow: "0 8px 25px rgba(0, 0, 0, 0.6)",
+              },
+            }}
+            elevation={3}
+          >
+            <TextField
+              label="Email"
+              variant="outlined"
+              type="email"
+              fullWidth
+              required
+            />
+          </Paper>
+            
+                 <Paper
+            sx={{
+              p: 1,
+              ml:6,
+              borderRadius: "16px",
+              display:"inline-block",
+              background:
+                theme.palette.mode === "dark"
+                  ? "linear-gradient(145deg, #1b1e24, #20242c)"
+                  : "linear-gradient(145deg, #ffffff, #f4f4f4)",
+              color: theme.palette.text.primary,
+              "&:hover": {
+                transform: "translateY(-6px)",
+                boxShadow: "0 8px 25px rgba(0, 0, 0, 0.6)",
+              },
+            }}
+            elevation={3}
+          >
+            <TextField
+              label="Message"
+              variant="outlined"
+              fullWidth
+              multiline
+              rows={4}
+              required
+            />
+          </Paper>
+           
+                  <Paper
+            sx={{
+              p: 1,
+              ml:6,
+              mb: 4,
+              width: "fit-content",
+              borderRadius: "16px",
+              display:"inline-block",
+              background:
+                theme.palette.mode === "dark"
+                  ? "linear-gradient(145deg, #1b1e24, #20242c)"
+                  : "linear-gradient(145deg, #ffffff, #f4f4f4)",
+              color: theme.palette.text.primary,
+              "&:hover": {
+                transform: "translateY(-6px)",
+                boxShadow: "0 8px 25px rgba(0, 0, 0, 0.6)",
+              },
+            }}
+            elevation={3}
+          >
+            <Button
+              variant="contained"
+              endIcon={<SendIcon />}
+              type="submit"
               sx={{
-                display: "flex",
-                flexDirection: "column",
-                gap: 2,
+                py: 1.2,
+                fontWeight: 600,
+                fontSize: "1rem",
+                display:"inline-block",
+                borderRadius: "8px",
+                background: isDark
+                  ? "linear-gradient(90deg, #2196F3, #00BCD4)"
+                  : "linear-gradient(90deg, #1976D2, #42A5F5)",
+                "&:hover": {
+                  transform: "scale(1.02)",
+                  transition: "0.3s",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
+                },
               }}
             >
-              <TextField
-                label="Name"
-                variant="outlined"
-                fullWidth
-                required
-              />
-              <TextField
-                label="Email"
-                variant="outlined"
-                type="email"
-                fullWidth
-                required
-              />
-              <TextField
-                label="Message"
-                variant="outlined"
-                fullWidth
-                multiline
-                rows={4}
-                required
-              />
+              Send Message
+            </Button>
+          </Paper>
 
-              <Button
-                variant="contained"
-                endIcon={<SendIcon />}
-                type="submit"
-                sx={{
-                  mt: 2,
-                  py: 1.2,
-                  fontWeight: 600,
-                  fontSize: "1rem",
-                  borderRadius: "8px",
-                  background: isDark
-                    ? "linear-gradient(90deg, #2196F3, #00BCD4)"
-                    : "linear-gradient(90deg, #1976D2, #42A5F5)",
-                  "&:hover": {
-                    transform: "scale(1.02)",
-                    transition: "0.3s",
-                    boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
-                  },
-                }}
-              >
-                Send Message
-              </Button>
-            </Box>
-          </Grid>
-        </Grid>
-        {/* <form >
-          <TextField
-            label="Name *"
-            name="name"
-            fullWidth
-            margin="normal"
-            required
-            variant="outlined"
-            color="primary"
-          />
-          <TextField
-            label="Email *"
-            name="email"
-            fullWidth
-            margin="normal"
-            required
-            type="email"
-            variant="outlined"
-            color="primary"
-          />
-          <TextField
-            label="Message *"
-            name="message"
-            fullWidth
-            margin="normal"
-            required
-            multiline
-            rows={4}
-            variant="outlined"
-            color="primary"
-          />
-
-          <Button
-            variant="contained"
-            color="primary"
-            fullWidth
-            sx={{ mt: 2, py: 1.2 }}
             
-          >
-            SEND MESSAGE
-          </Button>
-        </form> */}
-
-        <Snackbar
-          open={open}
-          autoHideDuration={4000}
-          onClose={handleClose}
-          anchorOrigin={{ vertical: "top", horizontal: "right" }}
-        >
-          <Alert
+          </Box>
+          <Snackbar
+            open={open}
+            autoHideDuration={4000}
             onClose={handleClose}
-            severity={success ? "success" : "error"}
-            sx={{ width: "100%" }}
+            anchorOrigin={{ vertical: "top", horizontal: "right" }}
           >
-            {success
-              ? "Message sent successfully!"
-              : "Failed to send message."}
-          </Alert>
-        </Snackbar>
-      </Paper>
+            <Alert
+              onClose={handleClose}
+              severity={success ? "success" : "error"}
+              sx={{ width: "100%" }}
+            >
+              {success
+                ? "Message sent successfully!"
+                : "Failed to send message."}
+            </Alert>
+          </Snackbar>
+        </Grid>
+
+        <Grid size={{ xs: 12, sm: 12, md: 6 }}></Grid>
+      </Grid>
     </Box>
+    </>
+  
   );
 }
-
-

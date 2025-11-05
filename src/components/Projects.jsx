@@ -49,7 +49,7 @@ const Projects = () => {
   return (
     <Box  sx={{padding:"50px 0"}}>
       <Typography variant="h3" gutterBottom fontWeight="bold" my={6} textAlign="center">
-        Projects
+        𝑷𝒓𝒐𝒋𝒆𝒄𝒕𝒔
       </Typography>
 
       <Grid container spacing={3} width={"95%"} margin="auto">

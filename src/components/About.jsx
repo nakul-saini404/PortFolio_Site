@@ -15,7 +15,7 @@ const About = () => {
         mb={5}
         textAlign={"center"}
       >
-        About Me
+        𝒜𝒷𝑜𝓊𝓉 𝑀𝑒
       </Typography>
       <Paper
         sx={{

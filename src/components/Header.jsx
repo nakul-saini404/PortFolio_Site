@@ -4,10 +4,10 @@ import { Box, Typography, Button, Link, Stack } from "@mui/material";
 const Header = ({ darkMode, toggleDark }) => (
   <Box textAlign="center" mb={6}>
     <Typography variant="h3" fontWeight="bold">
-      Nakul Saini
+      𝒩𝒶𝓀𝓊𝓁 𝒮𝒶𝒾𝓃𝒾
     </Typography>
     <Typography variant="subtitle1" sx={{ mb: 2 }}>
-      Frontend Developer | React Enthusiast
+      𝑭𝒓𝒐𝒏𝒕𝒆𝒏𝒅 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓 | 𝑹𝒆𝒂𝒄𝒕 𝑬𝒏𝒕𝒉𝒖𝒔𝒊𝒂𝒔𝒕
     </Typography>
 
     <Stack direction="row" justifyContent="center" spacing={3}>

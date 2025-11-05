@@ -219,7 +219,7 @@ export default function ContactForm() {
             }}
             elevation={3}
           >
-            <TextField label="Name" variant="outlined" fullWidth required />
+            <TextField label="Name" name="name" variant="outlined" fullWidth required />
           </Paper>
             
              <Paper
@@ -244,6 +244,7 @@ export default function ContactForm() {
               label="Email"
               variant="outlined"
               type="email"
+              name="email"
               fullWidth
               required
             />
@@ -269,6 +270,7 @@ export default function ContactForm() {
           >
             <TextField
               label="Message"
+              name="message"
               variant="outlined"
               fullWidth
               multiline

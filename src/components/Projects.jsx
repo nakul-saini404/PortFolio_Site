@@ -47,14 +47,14 @@ const Projects = () => {
   const isDark = theme.palette.mode === "dark";
 
   return (
-    <Box mb={6}>
-      <Typography variant="h3" gutterBottom fontWeight="bold" my={6}>
+    <Box  sx={{padding:"50px 0"}}>
+      <Typography variant="h3" gutterBottom fontWeight="bold" my={6} textAlign="center">
         Projects
       </Typography>
 
-      <Grid container spacing={3}>
+      <Grid container spacing={3} width={"95%"} margin="auto">
         {projects.map((p, i) => (
-          <Grid size={{ xs: 12,sm:6, md: 3 }} key={i}>
+          <Grid size={{ xs: 12,sm:6, md: 6, lg:3  }} key={i}>
             <Card
               elevation={3}
               sx={{

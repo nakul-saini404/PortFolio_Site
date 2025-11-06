@@ -62,8 +62,9 @@ export default function ContactForm() {
       mt={4}
       sx={{
         height: "100%",
-        width: "90%",
+        width: { xs: "100%", md: "90%" },
         margin: "auto",
+        p: { xs: 2, md: 0, lg: 0 },
         backgroundImage: `url(${bgImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center", 
@@ -80,7 +81,7 @@ export default function ContactForm() {
               p: 1,
               mb: 2,
               mt: 2,
-              ml:6,
+              ml: { xs: 0, md: 0, lg: 6 },
               display:"inline-block",
               borderRadius: "16px",
               background:
@@ -103,7 +104,7 @@ export default function ContactForm() {
             sx={{
               p: 1,
               mb: 2,
-              ml:6,
+              ml: { xs: 0, md: 0, lg: 6 },
               display:"inline-block",
               borderRadius: "16px",
               background:
@@ -127,7 +128,7 @@ export default function ContactForm() {
             sx={{
               p: 1,
               mb: 2,
-              ml:6,
+              ml: { xs: 0, md: 0, lg: 6 },
               borderRadius: "16px",
               display:"inline-block",
               background:
@@ -150,7 +151,7 @@ export default function ContactForm() {
             sx={{
               p: 1,
               mb: 2,
-              ml:6,
+              ml: { xs: 0, md: 0, lg: 6 },
               borderRadius: "16px",
               display:"inline-block",
               background:
@@ -173,7 +174,7 @@ export default function ContactForm() {
             sx={{
               p: 1,
               mb: 2,
-              ml:6,
+              ml: { xs: 0, md: 0, lg: 6 },
               borderRadius: "16px",
               display:"inline-block",
               background:
@@ -204,7 +205,7 @@ export default function ContactForm() {
             <Paper
             sx={{
               p: 1,
-              ml:6,
+              ml: { xs: 0, md: 0, lg: 6 },
               borderRadius: "16px",
               display:"inline-block",
               background:
@@ -225,7 +226,7 @@ export default function ContactForm() {
              <Paper
             sx={{
               p: 1,
-              ml:6,
+              ml: { xs: 0, md: 0, lg: 6 },
               borderRadius: "16px",
               display:"inline-block",
               background:
@@ -253,7 +254,7 @@ export default function ContactForm() {
                  <Paper
             sx={{
               p: 1,
-              ml:6,
+              ml: { xs: 0, md: 0, lg: 6 },
               borderRadius: "16px",
               display:"inline-block",
               background:
@@ -282,7 +283,7 @@ export default function ContactForm() {
                   <Paper
             sx={{
               p: 1,
-              ml:6,
+              ml: { xs: 0, md: 0, lg: 6 },
               mb: 4,
               width: "fit-content",
               borderRadius: "16px",

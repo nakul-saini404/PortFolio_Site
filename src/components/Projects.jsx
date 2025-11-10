@@ -12,32 +12,43 @@ import WebIcon from "@mui/icons-material/Web";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SettingsIcon from "@mui/icons-material/Settings";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 
 const projects = [
-  {
-    title: "Portfolio Website",
-    desc: "A personal website built with React and Material UI, showcasing projects and a contact form.",
-    icon: <WebIcon />,
-    link: "https://github.com/nakul-saini404/PortFolio_SIte",
-    link2:"https://nakul-saini404.github.io/PortFolio_Site/",
-  },
   {
     title: "E-commerce App",
     desc: "A responsive e-commerce frontend built using React and Bootstrap.",
     icon: <ShoppingCartIcon />,
     link: "https://github.com/nakul-saini404/E-commerce-app",
+    link2: "https://nakul-saini404.github.io/E-commerce-app/",
   },
   {
     title: "Theme Switcher",
     desc: "A theme switcher project to learn how to implement theme switcher.",
     icon: <SettingsIcon />,
     link: "https://github.com/nakul-saini404/themeSwitcher",
+    link2: "https://nakul-saini404.github.io/Font-generator",
   },
   {
     title: "ToDo",
     desc: "A todo project that adds todos list, edits it, and deletes it.",
     icon: <CheckCircleIcon />,
     link: "https://github.com/nakul-saini404/10TodoContext",
+    link2: "https://nakul-saini404.github.io/Font-generator",
+  },
+  {
+    title: "Font Generator",
+    desc: "Generate stylish and fancy fonts instantly. Perfect for creating unique usernames, bios, and captions for social media.",
+    icon: <AutoAwesomeIcon />,
+    link: "https://github.com/nakul-saini404/Font-generator",
+    link2: "https://nakul-saini404.github.io/Font-generator",
+  },
+  {
+    title: "Portfolio Website",
+    desc: "A personal website built with React and Material UI, showcasing projects and a contact form.",
+    icon: <WebIcon />,
+    link: "https://github.com/nakul-saini404/PortFolio_SIte",
+    link2: "https://nakul-saini404.github.io/PortFolio_Site/",
   },
 ];
 
@@ -47,14 +58,20 @@ const Projects = () => {
   const isDark = theme.palette.mode === "dark";
 
   return (
-    <Box  sx={{padding:"50px 0"}}>
-      <Typography variant="h3" gutterBottom fontWeight="bold" my={6} textAlign="center">
+    <Box sx={{ padding: "50px 0" }}>
+      <Typography
+        variant="h3"
+        gutterBottom
+        fontWeight="bold"
+        my={6}
+        textAlign="center"
+      >
         𝑷𝒓𝒐𝒋𝒆𝒄𝒕𝒔
       </Typography>
 
       <Grid container spacing={3} width={"95%"} margin="auto">
         {projects.map((p, i) => (
-          <Grid size={{ xs: 12,sm:6, md: 6, lg:3  }} key={i}>
+          <Grid size={{ xs: 12, sm: 6, md: 6, lg: 4 }} key={i}>
             <Card
               elevation={3}
               sx={{
@@ -80,8 +97,8 @@ const Projects = () => {
               <CardContent>
                 <Box
                   sx={{
-                    width: 80,
-                    height: 80,
+                    width: 250, // bigger width
+                    height: 250,
                     background: isDark
                       ? "linear-gradient(135deg, rgba(0,200,255,0.15), rgba(0,150,255,0.1))"
                       : "linear-gradient(135deg, rgba(25,118,210,0.1), rgba(25,118,210,0.05))",
@@ -95,7 +112,7 @@ const Projects = () => {
                   }}
                 >
                   {React.cloneElement(p.icon, {
-                    sx: { fontSize: 40, color: theme.palette.primary.main },
+                    sx: { fontSize: 200, color: theme.palette.primary.main },
                   })}
                 </Box>
 
@@ -113,46 +130,48 @@ const Projects = () => {
                     mb: 2,
                     textAlign: "center",
                     maxWidth: "80%",
-                    
                   }}
                 >
                   {p.desc}
                 </Typography>
-                <Box display={"flex"} alignItems="center"  justifyContent="soace-between" >
-                     <Link
-                  href={p.link}
-                  sx={{
-                    textAlign: "center",
-                    margin: "auto",
-                    width: "100%",
-                    display: "inline-block",
-                    color: theme.palette.primary.main,
-                    mt:2
-                  }}
-                  underline="hover"
-                  target="_blank"
-                  rel="noopener"
+                <Box
+                  display={"flex"}
+                  alignItems="center"
+                  justifyContent="soace-between"
                 >
-                  View Code On My GitHub
-                </Link>
-                <Link
-                  href={p.link2}
-                  sx={{
-                    textAlign: "center",
-                    margin: "auto",
-                    width: "100%",
-                    display: "inline-block",
-                    color: theme.palette.primary.main,
-                    mt:2
-                  }}
-                  underline="hover"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  View Project Live
-                </Link>
+                  <Link
+                    href={p.link}
+                    sx={{
+                      textAlign: "center",
+                      margin: "auto",
+                      width: "100%",
+                      display: "inline-block",
+                      color: theme.palette.primary.main,
+                      mt: 2,
+                    }}
+                    underline="hover"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    View Code On My GitHub
+                  </Link>
+                  <Link
+                    href={p.link2}
+                    sx={{
+                      textAlign: "center",
+                      margin: "auto",
+                      width: "100%",
+                      display: "inline-block",
+                      color: theme.palette.primary.main,
+                      mt: 2,
+                    }}
+                    underline="hover"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    View Project Live
+                  </Link>
                 </Box>
-               
               </CardContent>
             </Card>
           </Grid>
@@ -163,4 +182,3 @@ const Projects = () => {
 };
 
 export default Projects;
-

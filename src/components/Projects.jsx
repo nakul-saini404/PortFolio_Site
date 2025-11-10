@@ -97,8 +97,8 @@ const Projects = () => {
               <CardContent>
                 <Box
                   sx={{
-                    width: 250, // bigger width
-                    height: 250,
+                    width: 260, // bigger width
+                    height: 260,
                     background: isDark
                       ? "linear-gradient(135deg, rgba(0,200,255,0.15), rgba(0,150,255,0.1))"
                       : "linear-gradient(135deg, rgba(25,118,210,0.1), rgba(25,118,210,0.05))",

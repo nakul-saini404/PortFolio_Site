@@ -16,6 +16,13 @@ import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 
 const projects = [
   {
+    title: "Portfolio Website",
+    desc: "A personal website built with React and Material UI, showcasing projects and a contact form.",
+    icon: <WebIcon />,
+    link: "https://github.com/nakul-saini404/PortFolio_SIte",
+    link2: "https://nakul-saini404.github.io/PortFolio_Site/",
+  },
+  {
     title: "E-commerce App",
     desc: "A responsive e-commerce frontend built using React and Bootstrap.",
     icon: <ShoppingCartIcon />,
@@ -50,6 +57,7 @@ const projects = [
     link: "https://github.com/nakul-saini404/PortFolio_SIte",
     link2: "https://nakul-saini404.github.io/PortFolio_Site/",
   },
+  
 ];
 
 const Projects = () => {

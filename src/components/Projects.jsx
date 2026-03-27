@@ -13,12 +13,13 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SettingsIcon from "@mui/icons-material/Settings";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
+import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 
 const projects = [
   {
     title: "Smart Financial Calculators",
     desc: "A fully responsive financial calculator platform built with React, Material UI, and modern UI practices, providing tools like EMI, SIP, GST, tax, etc.",
-    icon: <WebIcon />,
+    icon: <AccountBalanceIcon />,
     link2: "https://finance-calculator-llkvripfj-nakul-sainis-projects-761249f0.vercel.app/",
     link: "https://github.com/nakul-saini404/Finance_calculator",
   },

@@ -42,7 +42,7 @@ const projects = [
     desc: "A todo project that adds todos list, edits it, and deletes it.",
     icon: <CheckCircleIcon />,
     link: "https://github.com/nakul-saini404/10TodoContext",
-    // link2: "https://nakul-saini404.github.io/Font-generator",
+    link2: "https://10-todo-context.vercel.app/",
   },
   {
     title: "Font Generator",

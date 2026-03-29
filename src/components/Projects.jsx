@@ -21,7 +21,7 @@ const projects = [
     desc: "A fully responsive financial calculator platform built with React, Material UI, and modern UI practices, providing tools like EMI, SIP, GST, tax, etc.",
     icon: <AccountBalanceIcon />,
     link2: "https://finance-calculator-llkvripfj-nakul-sainis-projects-761249f0.vercel.app/",
-    link: "https://github.com/nakul-saini404/Finance_calculator",
+    link: "https://www.forgecodehub.com/calculators",
   },
   {
     title: "E-commerce App",
@@ -35,14 +35,14 @@ const projects = [
     desc: "A theme switcher project to learn how to implement theme switcher.",
     icon: <SettingsIcon />,
     link: "https://github.com/nakul-saini404/themeSwitcher",
-    link2: "https://nakul-saini404.github.io/Font-generator",
+    // link2: "https://nakul-saini404.github.io/Font-generator",
   },
   {
     title: "ToDo",
     desc: "A todo project that adds todos list, edits it, and deletes it.",
     icon: <CheckCircleIcon />,
     link: "https://github.com/nakul-saini404/10TodoContext",
-    link2: "https://nakul-saini404.github.io/Font-generator",
+    // link2: "https://nakul-saini404.github.io/Font-generator",
   },
   {
     title: "Font Generator",

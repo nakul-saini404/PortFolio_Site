@@ -11,7 +11,10 @@ import {
 
 const Header = ({ darkMode, toggleDark }) => {
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm")); // true for small devices
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+
+  // ✅ Works on both localhost AND GitHub Pages (e.g. /repo-name/resume.pdf)
+  const resumeUrl = `${import.meta.env.BASE_URL}/resume.pdf`;
 
   return (
     <Box textAlign="center" mb={6} sx={{ px: isSmallScreen ? 2 : 0 }}>
@@ -32,7 +35,7 @@ const Header = ({ darkMode, toggleDark }) => {
         𝑭𝒓𝒐𝒏𝒕𝒆𝒏𝒅 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓 | 𝑹𝒆𝒂𝒄𝒕 𝑬𝒏𝒕𝒉𝒖𝒔𝒊𝒂𝒔𝒕
       </Typography>
 
-      {/* Responsive Links */}
+      {/* Links */}
       <Stack
         direction="row"
         justifyContent="center"
@@ -42,15 +45,15 @@ const Header = ({ darkMode, toggleDark }) => {
       >
         {[
           { href: "mailto:nakul.saini404@gmail.com", label: "Email" },
-          { href: "https://www.linkedin.com/in/nakul-saini404/", label: "LinkedIn" },
-          { href: "https://github.com/nakul-saini404", label: "GitHub" },
-          { href: "/resume.pdf", label: "View Resume", target: "_blank" },
-          { href: "/resume.pdf", label: "Download Resume", download: true },
+          { href: "https://www.linkedin.com/in/nakul-saini404/", label: "LinkedIn", target: "_blank" },
+          { href: "https://github.com/nakul-saini404", label: "GitHub", target: "_blank" },
+          { href: resumeUrl, label: "View Resume", target: "_blank" },
+          { href: resumeUrl, label: "Download Resume", download: "Nakul-Saini-Resume.pdf" },
         ].map((link, i) => (
           <Stack
             key={i}
             sx={{
-              width: isSmallScreen ? "45%" : "auto", // 2 links per row on small screens
+              width: isSmallScreen ? "45%" : "auto",
               textAlign: "center",
             }}
           >
@@ -64,9 +67,7 @@ const Header = ({ darkMode, toggleDark }) => {
               sx={{
                 fontWeight: 600,
                 fontSize: isSmallScreen ? "0.9rem" : "1rem",
-                "&:hover": {
-                  textDecoration: "underline",
-                },
+                "&:hover": { textDecoration: "underline" },
               }}
             >
               {link.label}
@@ -75,7 +76,7 @@ const Header = ({ darkMode, toggleDark }) => {
         ))}
       </Stack>
 
-      {/* Theme toggle button */}
+      {/* Theme toggle */}
       <Button
         size="small"
         onClick={toggleDark}
@@ -87,9 +88,7 @@ const Header = ({ darkMode, toggleDark }) => {
           border: "none",
           outline: "none !important",
           boxShadow: "none",
-          "&:hover": {
-            border: "none",
-          },
+          "&:hover": { border: "none" },
         }}
       >
         {darkMode ? "LIGHT MODE" : "DARK MODE"}
